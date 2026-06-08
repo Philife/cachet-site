@@ -1,5 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Ballast">
-  <defs><clipPath id="fav"><circle cx="16" cy="16" r="13"/></clipPath></defs>
-  <circle cx="16" cy="16" r="13" fill="none" stroke="#3fb950" stroke-width="3"/>
-  <g clip-path="url(#fav)"><rect x="1" y="19.5" width="30" height="13" fill="#2ea043"/></g>
+  <defs>
+    <linearGradient id="f" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5fe07a"/><stop offset="1" stop-color="#33ab4d"/>
+    </linearGradient>
+    <clipPath id="fc"><circle cx="16" cy="16" r="15"/></clipPath>
+  </defs>
+  <circle cx="16" cy="16" r="15" fill="url(#f)"/>
+  <g clip-path="url(#fc)"><rect x="1" y="16.5" width="30" height="15" fill="#136a2a"/></g>
+  <rect x="1" y="15.5" width="30" height="2" fill="#eafff0"/>
 </svg>
