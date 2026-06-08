@@ -97,6 +97,17 @@
   .faq dt{font-weight:660;margin-top:18px}
   .faq dd{margin:6px 0 0;color:var(--muted);font-size:15px}
   .center{text-align:center}
+
+  /* annual savings calculator */
+  .calc{max-width:660px;margin:0 0 22px}
+  .calcrow{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .calcrow label{font-size:15px;color:var(--text);font-weight:600}
+  .inputwrap{display:inline-flex;align-items:center;gap:6px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:9px 13px;font-size:18px;font-weight:650}
+  .inputwrap input{background:transparent;border:none;color:var(--text);font:inherit;width:130px;outline:none;font-variant-numeric:tabular-nums}
+  .calcout{margin-top:18px;text-align:center;border-top:1px solid var(--line);padding-top:18px}
+  .calclabel{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .calcbig{font-size:42px;font-weight:760;color:var(--green);letter-spacing:-.02em;margin-top:6px;font-variant-numeric:tabular-nums}
+  .calcrange{font-size:13px;color:var(--muted);margin-top:8px}
   footer{border-top:1px solid var(--line);padding:38px 0 60px;text-align:center;color:var(--muted);font-size:14px}
   footer .logo{justify-content:center;margin-bottom:10px;font-size:16px}
 
@@ -255,6 +266,38 @@
       stated bar and judge. Full methodology available on request.</p>
   </section>
 
+  <section id="savings">
+    <div class="eyebrow">Annual impact</div>
+    <h2>What ~80% off your LLM bill is worth in a year</h2>
+    <p class="lead">LLM spend is recurring and grows with usage, so the savings compound. Enter your
+      monthly LLM bill to see the annualized impact at our measured reduction rate.</p>
+
+    <div class="calc card">
+      <div class="calcrow">
+        <label for="spend">Your monthly LLM spend</label>
+        <div class="inputwrap">$ <input id="spend" type="number" value="10000" min="0" step="1000" /></div>
+      </div>
+      <div class="calcout">
+        <div class="calclabel">Estimated annual savings</div>
+        <div class="calcbig" id="annual">$97,200</div>
+        <div class="calcrange" id="range">about $86,400 – $104,400 / year (measured 72–87% range)</div>
+      </div>
+    </div>
+
+    <p class="lead" style="margin-bottom:14px">Typical organizations, by usage — assuming a premium
+      model at roughly <strong>$0.02 per request</strong> (a support-style answer with context):</p>
+    <table>
+      <tr><th>Organization</th><th>LLM requests / mo</th><th>All-premium spend / yr</th><th>Projected annual savings</th></tr>
+      <tr><td>Early-stage AI app</td><td class="r">500K</td><td class="r">$120K</td><td class="v">~$97K</td></tr>
+      <tr><td>Growth-stage AI SaaS</td><td class="r">5M</td><td class="r">$1.2M</td><td class="v">~$972K</td></tr>
+      <tr><td>Enterprise AI platform</td><td class="r">50M</td><td class="r">$12M</td><td class="v">~$9.7M</td></tr>
+    </table>
+    <p class="fine">Illustrative projections: monthly requests × ~$0.02/request premium pricing ×
+      our measured <strong>~81% reduction</strong> (72–87% range, see methodology). Actual savings
+      depend on your models, answer lengths, and traffic mix — high-repeat traffic saves more via
+      the cache; substantive long-form saves more via routing. Not a guarantee.</p>
+  </section>
+
   <section id="controlplane">
     <div class="eyebrow">More than savings</div>
     <h2>The control plane for your LLM traffic</h2>
@@ -395,6 +438,21 @@
   <div>Ballast builds <strong>Cachet</strong> — cut LLM cost, keep quality, prove it.</div>
   <div style="margin-top:8px">© <span id="yr"></span> Ballast. Benchmark figures are from a controlled test set; results vary by workload.</div>
 </footer>
-<script>document.getElementById("yr").textContent=new Date().getFullYear();</script>
+<script>
+document.getElementById("yr").textContent = new Date().getFullYear();
+(function () {
+  const fmt = (n) => "$" + Math.round(n).toLocaleString("en-US");
+  const spendEl = document.getElementById("spend");
+  function calc() {
+    const monthly = Math.max(0, Number(spendEl.value) || 0);
+    const yearly = monthly * 12;
+    document.getElementById("annual").textContent = fmt(yearly * 0.81);
+    document.getElementById("range").textContent =
+      "about " + fmt(yearly * 0.72) + " – " + fmt(yearly * 0.87) + " / year (measured 72–87% range)";
+  }
+  spendEl.addEventListener("input", calc);
+  calc();
+})();
+</script>
 </body>
 </html>
