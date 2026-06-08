@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Cachet">
+  <!-- Cachet: a seal of approval — verified quality. (cache + a mark of distinction) -->
+  <circle cx="16" cy="16" r="13" fill="none" stroke="#3fb950" stroke-width="2.6"/>
+  <circle cx="16" cy="16" r="8.5" fill="#3fb950" opacity="0.16"/>
+  <path d="M11 16.6 l3.4 3.4 L21.2 12.6" fill="none" stroke="#3fb950" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
