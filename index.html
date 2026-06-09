@@ -209,10 +209,10 @@
 
   <div class="stats">
     <div class="stat"><div class="n g mono">~77%</div><div class="l">lower LLM cost via routing</div></div>
-    <div class="stat"><div class="n mono">~87%</div><div class="l">answers correct &amp; helpful</div></div>
+    <div class="stat"><div class="n mono">~86%</div><div class="l">answers correct &amp; helpful</div></div>
     <div class="stat"><div class="n">Measured</div><div class="l">proven by an independent judge, not promised</div></div>
   </div>
-  <div class="fine">Measured on a 547-question support benchmark, graded by an independent
+  <div class="fine">Measured as the mean of 3 runs over a 547-question support benchmark, graded by an independent
     Claude Opus judge on a "correct &amp; helpful" bar. Routing alone cuts cost ~77%; with repeat
     traffic, the cache pushes blended savings past 90%. Results vary by traffic — see methodology.</div>
 
@@ -260,7 +260,7 @@
       <tr><th>Metric</th><th>Result</th><th>Basis</th></tr>
       <tr><td>Cost savings via routing (vs. all-premium)</td><td class="v">~77%</td><td class="r">all-unique traffic</td></tr>
       <tr><td>Blended savings with cache</td><td class="v">up to ~90%</td><td class="r">repeat traffic</td></tr>
-      <tr><td>Answer quality (correct &amp; helpful)</td><td class="v">~87%</td><td class="r">Opus-judged</td></tr>
+      <tr><td>Answer quality (correct &amp; helpful)</td><td class="v">~86%</td><td class="r">Opus-judged</td></tr>
       <tr><td>Answers worse than premium</td><td class="v">~7%</td><td class="r">—</td></tr>
     </table>
     <p class="fine">Honest notes: ~77% is cost-routing alone on all-unique traffic (the worst
