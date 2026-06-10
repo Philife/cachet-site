@@ -9,11 +9,11 @@
 <!-- Brand: Cachet (company + product). Fill remaining [bracketed] placeholders
      (contact email, domain) before publishing. -->
 <style>
-  /* Wordmark face, self-hosted (no third-party font CDN — the product pitch is
+  /* Site face, self-hosted (no third-party font CDN — the product pitch is
      "your traffic stays yours"; the landing page should live by it too).
-     Outfit Bold, OFL license. */
-  @font-face{font-family:"Outfit";font-style:normal;font-weight:700;font-display:swap;
-    src:url("outfit-700.woff2") format("woff2")}
+     Outfit variable (weights 100-900 in one file), OFL license. */
+  @font-face{font-family:"Outfit";font-style:normal;font-weight:100 900;font-display:swap;
+    src:url("outfit-var.woff2") format("woff2")}
   :root{
     --bg:#0e1217; --panel:#161d27; --panel2:#1f2835; --line:#283341;
     --text:#e9eef4; --muted:#8b97a7; --green:#3fb950; --green2:#2ea043;
@@ -21,7 +21,7 @@
   }
   *{box-sizing:border-box} html{scroll-behavior:smooth}
   body{margin:0;background:var(--bg);color:var(--text);
-    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;
+    font-family:"Outfit",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;
     position:relative;overflow-x:hidden}
   /* ambient glow */
   body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
