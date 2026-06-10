@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ballast — cut LLM costs without gambling on answer quality</title>
-<meta name="description" content="Cachet by Ballast: a self-hosted control plane for LLM traffic — cuts spend with semantic caching and quality-gated routing, plus budgets, PII guardrails, and continuous quality monitoring. Production-hardened." />
+<title>Cachet — the self-hosted LLM cost &amp; governance gateway</title>
+<meta name="description" content="Cachet: a self-hosted control plane for LLM traffic — cuts spend with semantic caching and quality-gated routing, plus budgets, PII guardrails, and continuous quality monitoring. Production-hardened." />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-<!-- Company: Ballast. Product: Cachet. Fill remaining [bracketed] placeholders
+<!-- Brand: Cachet (company + product). Fill remaining [bracketed] placeholders
      (contact email, domain) before publishing. -->
 <style>
   :root{
@@ -159,7 +159,7 @@
 
 <div class="wrap">
   <nav>
-    <span class="logo"><svg><use href="#mark-ballast"/></svg> Ballast</span>
+    <span class="logo"><svg><use href="#mark-cachet"/></svg> Cachet</span>
     <div class="navlinks">
       <a class="btn ghost" href="#how">How it works</a>
       <a class="btn" href="#contact">Request access</a>
@@ -169,13 +169,15 @@
   <header class="hero">
     <div>
       <div class="tag"><span class="pulse"></span> Now onboarding design partners</div>
-      <h1>Cut your LLM bill <span class="hl">77–90%</span> — without gambling on answer quality.</h1>
-      <p class="sub"><strong>Cachet</strong> is a drop-in gateway for AI products. It serves
-        repeated questions from a smart cache, routes the rest to the cheapest model that's good
-        enough, and <strong>measures</strong> that quality held — so your savings are real, not a gamble.</p>
+      <h1>The LLM cost gateway <span class="hl">you run yourself</span>.</h1>
+      <p class="sub"><strong>Cachet</strong> cuts your LLM bill <strong>77–90%</strong> with semantic
+        caching and quality-gated routing — and <strong>measures</strong> that quality held — entirely
+        inside your own infrastructure. Hosted routers make you send every prompt to a third party and
+        <em>bet</em> on which model is best. Cachet runs in your environment, <strong>verifies every
+        answer</strong>, and shows its work.</p>
       <div class="cta-row">
         <a class="btn" href="#contact">Request early access</a>
-        <a class="btn ghost" href="#proof">See the proof</a>
+        <a class="btn ghost" href="#proof">Read the benchmark</a>
       </div>
     </div>
 
@@ -230,29 +232,43 @@
     <div class="eyebrow">The product</div>
     <h2><svg class="seal"><use href="#mark-cachet"/></svg> Meet Cachet</h2>
     <p class="lead">Point your app at one endpoint (OpenAI-compatible — change one base URL).
-      Three layers do the work:</p>
+      It runs in <em>your</em> environment, and three things make it safe to trust:</p>
     <div class="grid3">
       <div class="card">
-        <div class="k">1 · Semantic cache</div>
-        <h3>Repeats are free</h3>
-        <p>Identical <em>and</em> reworded questions are served from cache for $0 — matched by
-          meaning, with a reranker so a similar-but-different question never gets the wrong answer.
-          Only answers that passed the quality gate are cached, so a repeat is never worse than a fresh one.</p>
+        <div class="k">1 · Runs in your environment</div>
+        <h3>Your data never leaves</h3>
+        <p>Prompts and answers stay inside your own infrastructure — no third party sees your
+          traffic. Route a tier to a <strong>local model via Ollama</strong> for fully on-prem,
+          $0 inference. Drop-in OpenAI-compatible; deploy with Docker.</p>
       </div>
       <div class="card">
-        <div class="k">2 · Quality-gated routing</div>
-        <h3>Cheap first, verified</h3>
-        <p>New questions are drafted by a low-cost model, checked, and escalated to a premium
-          model only when the draft isn't good enough. Precision-sensitive prompts skip to premium.
-          Choose max-savings or near-premium per workload.</p>
+        <div class="k">2 · Verified, not predicted</div>
+        <h3>A quality floor per request</h3>
+        <p>Hosted routers <em>guess</em> which model will be best. Cachet drafts cheap,
+          <strong>verifies the actual answer</strong>, and escalates to a stronger model only when
+          it isn't good enough — a measured floor on every request, not a bet. Repeats are then
+          served from a quality-gated cache, never worse than a fresh route.</p>
       </div>
       <div class="card">
-        <div class="k">3 · Measured quality</div>
-        <h3>Savings you can trust</h3>
-        <p>A built-in evaluation harness continuously grades whether cheaper answers stayed
-          correct and helpful — so cost cuts can't silently degrade your product.</p>
+        <div class="k">3 · Cost + governance in one</div>
+        <h3>The whole control plane</h3>
+        <p>Not just routing: a semantic cache (repeats served free at proven quality), per-team
+          budgets and spend attribution, PII guardrails, and a continuous quality probe that grades
+          whether cheaper answers stayed correct and helpful — all self-hosted.</p>
       </div>
     </div>
+  </section>
+
+  <section id="why">
+    <div class="eyebrow">The difference</div>
+    <h2>Your traffic is your business. Keep it that way.</h2>
+    <p class="lead">Sending every prompt to a hosted router means a third party sees all of it — and
+      you're trusting their <em>prediction</em> of quality with no per-request safety net. For
+      healthcare, fintech, legal, or anyone under a compliance regime, that's a non-starter.</p>
+    <p class="lead">Cachet inverts it: the gateway runs in <strong>your</strong> environment, the cache
+      and the spend data stay with <strong>you</strong>, and every cheap answer is
+      <strong>verified before it's served</strong>. You get the savings of routing <em>and</em> the
+      savings of caching, with quality you can audit — without handing your data to anyone.</p>
   </section>
 
   <section id="proof">
@@ -476,15 +492,16 @@
     <div class="eyebrow" style="text-align:center">Get in touch</div>
     <h2 style="justify-content:center">Request early access</h2>
     <p class="lead" style="margin:0 auto 24px">We're onboarding a small cohort of design partners.
-      If your LLM bill is growing and quality can't slip, let's talk.</p>
+      If your LLM bill is growing and your data can't leave, let's talk — self-host Cachet, or run a
+      measured pilot against your own traffic. You keep every prompt.</p>
     <a class="btn" href="mailto:[your-email@yourdomain.com]?subject=Cachet%20%E2%80%94%20early%20access">[your-email@yourdomain.com]</a>
   </section>
 </div>
 
 <footer>
-  <span class="logo"><svg style="color:var(--text)"><use href="#mark-ballast"/></svg> Ballast</span>
-  <div>Ballast builds <strong>Cachet</strong> — cut LLM cost, keep quality, prove it.</div>
-  <div style="margin-top:8px">© <span id="yr"></span> Ballast. Benchmark figures are from a controlled test set; results vary by workload.</div>
+  <span class="logo"><svg style="color:var(--text)"><use href="#mark-cachet"/></svg> Cachet</span>
+  <div><strong>Cachet</strong> — the self-hosted LLM cost &amp; governance gateway. Cut cost, keep quality, prove it.</div>
+  <div style="margin-top:8px">© <span id="yr"></span> Cachet. Benchmark figures are from a controlled test set; results vary by workload.</div>
 </footer>
 <script>
 document.getElementById("yr").textContent = new Date().getFullYear();
