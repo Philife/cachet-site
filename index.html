@@ -294,6 +294,7 @@
       <tr><td>Answer quality (correct &amp; helpful)</td><td class="v">~86%</td><td class="r">full set, Opus-judged</td></tr>
       <tr><td>Answer quality, answerable questions</td><td class="v">~92%</td><td class="r">≈93% of the ceiling</td></tr>
       <tr><td>Blended quality (curated FAQ + cache)</td><td class="v">~96%</td><td class="r">answerable set, Zipf FAQ-heavy stream</td></tr>
+      <tr><td>Generalization: 5 more support verticals</td><td class="v">~94% / ~83%</td><td class="r">quality / savings, 370 questions × 3 runs</td></tr>
       <tr><td>Answers worse than premium</td><td class="v">~7%</td><td class="r">—</td></tr>
     </table>
     <p class="fine">Honest notes: ~77% is cost-routing alone on all-unique traffic (the worst
@@ -453,6 +454,11 @@
       copilot</strong> with high-volume, repetitive, customer-facing questions — where the LLM bill
       is a top cost line and a wrong answer actually matters. That's exactly where caching saves the
       most and where "measured quality" is worth paying for.</p>
+    <p class="lead">Not just one workload: on support-style benchmarks across
+      <strong>e-commerce, fintech, travel, healthcare admin, and telecom</strong> (370 questions,
+      3 independent runs, Opus-judged), the same routing held <strong>~94% quality at ~83%
+      savings</strong> — the <a href="https://github.com/Philife/cachet-eval" style="color:var(--blue)">dataset
+      and judge are public</a>, so you can re-run the numbers yourself.</p>
   </section>
 
   <section id="pricing">
